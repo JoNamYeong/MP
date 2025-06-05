@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="학습 일정 관리 앱"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#40E0D0"
+        android:padding="10dp" />
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+<!--                일정 등록 탭-->
+                <ScrollView
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:id="@+id/logoImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/logo"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="과목을 선택하세요"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp" />
+
+                        <Spinner
+                            android:id="@+id/spinnerSubject"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="날짜를 선택하세요"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="10dp" />
+
+                        <DatePicker
+                            android:id="@+id/datePicker"
+                            android:datePickerMode="spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="20dp" />
+
+                        <Button
+                            android:id="@+id/btnRegister"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="학습 일정 등록"
+                            android:textSize="16sp"
+                            android:layout_marginBottom="20dp"
+                            android:background="#40E0D0" />
+
+                        <TextView
+                            android:id="@+id/tvScheduleTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="등록된 학습 일정"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:padding="5dp" />
+
+                        <LinearLayout
+                            android:id="@+id/scheduleLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="20dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="앱을 평가해주세요"
+                            android:textSize="14sp"
+                            android:gravity="center"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="5dp" />
+
+                        <RatingBar
+                            android:id="@+id/ratingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:numStars="5"
+                            android:stepSize="0.5"
+                            android:layout_marginBottom="20dp" />
+                    </LinearLayout>
+                </ScrollView>
+
+<!--                타이머 탭-->
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/timerImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:src="@drawable/timer"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginBottom="30dp" />
+
+                    <Chronometer
+                        android:id="@+id/chronometer1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="30dp"
+                        android:gravity="center"
+                        android:layout_marginBottom="40dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btnStart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="시작"
+                            android:layout_margin="10dp" />
+
+                        <Button
+                            android:id="@+id/btnStop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="정지"
+                            android:layout_margin="10dp" />
+
+                        <Button
+                            android:id="@+id/btnReset"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="초기화"
+                            android:layout_margin="10dp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvStudyMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:textSize="16sp"
+                        android:text="오늘 할 일을 내일로 미루지 마라"
+                        android:gravity="center"
+                        android:textStyle="italic" />
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+</LinearLayout>
