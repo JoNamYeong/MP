@@ -108,12 +108,19 @@
                             android:gravity="center"
                             android:padding="5dp" />
 
-                        <LinearLayout
-                            android:id="@+id/scheduleLayout"
+                        <ListView
+                            android:id="@+id/scheduleListView"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_marginBottom="20dp" />
+                            android:layout_height="300dp"
+                            android:layout_marginBottom="20dp"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="2dp" />
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/scheduleLayout"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="vertical"-->
+<!--                            android:layout_marginBottom="20dp" />-->
 
                         <TextView
                             android:layout_width="match_parent"
